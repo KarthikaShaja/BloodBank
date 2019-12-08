@@ -1,0 +1,23 @@
+package blood.controllers;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import blood.dl.ReceiverDL;
+import blood.dto.ReceiverDTO;
+@Controller
+public class ReceiverController {
+	
+	  
+    @RequestMapping("/receiver_view")    
+    public String viewReceiver(Model m){    
+        List<ReceiverDTO> list=ReceiverDL.getReceivers();    
+        m.addAttribute("list",list);  
+        return "receiver_view";    
+    }    
+   }  
+
+

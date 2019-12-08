@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value=""/>
+		<item key="casesensitive" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="wrap" value="true"/>
+		<item key="wholeword" value="false"/>
+		<list key="findhistory">
+			<item value="dob"/>
+			<item value="age"/>
+			<item value="footer-bg"/>
+			<item value="footer-"/>
+			<item value="login"/>
+			<item value="href"/>
+			<item value="bg"/>
+			<item value="logo"/>
+			<item value="admin_view"/>
+			<item value="col-12 col-md-6 col-lg-4 mt-5 mt-md-0"/>
+			<item value="foot-links"/>
+			<item value="ver2"/>
+			<item value="&amp;ndsp"/>
+		</list>
+		<list key="replacehistory">
+			<item value="&amp;nbsp"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_WIDTH" value="305"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		<item key="DIALOG_HEIGHT" value="444"/>
+		<item key="DIALOG_X_ORIGIN" value="1618"/>
+		<item key="DIALOG_Y_ORIGIN" value="20"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="652"/>
+		<item key="DIALOG_Y_ORIGIN" value="362"/>
+	</section>
+</section>

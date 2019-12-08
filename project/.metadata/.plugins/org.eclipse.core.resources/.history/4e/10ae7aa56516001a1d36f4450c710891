@@ -1,0 +1,5 @@
+package blood.dto;
+
+public class AdminProfileDTO {
+
+}

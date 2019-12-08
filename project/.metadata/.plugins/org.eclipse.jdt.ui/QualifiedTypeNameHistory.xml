@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="blood.dto.DonorDTO"/>
+<fullyQualifiedTypeName name="blood.dl.AdminAcceptDonorDL"/>
+<fullyQualifiedTypeName name="blood.dto.AdminReleaseReceiverDTO"/>
+<fullyQualifiedTypeName name="blood.dto.ReceiverDTO"/>
+<fullyQualifiedTypeName name="blood.dl.DBHelper"/>
+<fullyQualifiedTypeName name="blood.dto.AdminAcceptDonorDTO"/>
+<fullyQualifiedTypeName name="blood.dl.DonorDL"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="blood.dto.AdminProfileDTO"/>
+<fullyQualifiedTypeName name="blood.dl.AdminProfileDL"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,88 @@
+function validate() {
+
+	var name = document.getElementById("txtDonorName").value;
+	var age = document.getElementById("txtage").value;
+	var gender= document.getElementById("txtgender").value;
+	
+	var height = document.getElementById("txtheight").value;
+	var weight = document.getElementById("txtweight").value;
+	var valid = true;
+
+	if (name <= 0) 
+	{
+		alert("Don't leave Name field empty!");
+		valid = false;
+
+	}
+	
+	if(age<=0)
+		{
+			alert("Don't leave Age field empty!");
+			valid = false;
+		}
+	
+	else {
+		if(age < 17 || age > 66)
+	
+			{
+				alert("You are not eligible to donate Blood");
+				valid = false;
+			}
+		}
+	
+	if (gender==Male)
+		{
+		if((height >= 125 && weight >= 54)||(height >=153 && weight >=50))
+			{
+				alert("Your Height and weight do not match for Blood Donation");
+				valid = false;
+			}
+		}
+		/*
+	if (mark1.value.length <= 0) {
+		document.getElementById("eAuthor").style.visibility = "visible";
+		// alert("Don't leave the field empty!");
+		valid = false;
+
+	}
+	if (mark2.value.length <= 0) {
+		document.getElementById("eTitle").style.visibility = "visible";
+		// alert("Don't leave the field empty!");
+		valid = false;
+
+	}
+	if (mark3.value.length <= 0) {
+		document.getElementById("ePrice").style.visibility = "visible";
+		// alert("Don't leave the field empty!");
+		valid = false;
+
+	}
+
+	if (isNaN(id.value)) {
+		document.getElementById("eBook_id").style.visibility = "visible";
+		// alert(imark1);
+		valid = false;
+
+	}
+
+	if (isNaN(imark1) || (imark1 < 0 || imark1 > 100)) {
+		document.getElementById("eMark1").style.visibility = "visible";
+		// alert(imark1);
+		valid = false;
+
+	}
+	if (isNaN(imark2) || (imark2 < 0 || imark2 > 100)) {
+		document.getElementById("eMark2").style.visibility = "visible";
+		// alert(imark1);
+		valid = false;
+
+	}
+
+	if (isNaN(imark3) || (imark3 < 0 || imark3 > 100)) {
+		document.getElementById("eMark3").style.visibility = "visible";
+		// alert(imark1);
+		valid = false;
+	}*/
+
+	return valid;
+}

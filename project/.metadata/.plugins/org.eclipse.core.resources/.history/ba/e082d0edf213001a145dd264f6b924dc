@@ -1,0 +1,30 @@
+package blood.utlity;
+
+import blood.dl.DonorDL;
+import blood.dl.ReceiverDL;
+
+public class GuestIdGenerate
+{
+	public static String generateGSDNRId()
+	{
+		String str=new String();
+		String newstr=new String();
+		String prefix,suffix;
+		int isuffix;
+		str=DonorDL.IdGuest();
+		if(str==null)
+		{
+			newstr="GSDNR101";
+		}
+		else
+		{
+			prefix=str.substring(0,3);
+			isuffix=Integer.parseInt(str.substring(3));
+			isuffix++;
+			newstr=prefix+isuffix;
+		}
+		return newstr;
+		
+	}
+
+}

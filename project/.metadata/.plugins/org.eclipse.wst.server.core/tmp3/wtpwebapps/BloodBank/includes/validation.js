@@ -1,0 +1,87 @@
+function validate() {
+
+	var name = document.getElementById("txtDonorName").value;
+	var age = document.getElementById("txtage").value;
+	//var gender = document.getElementById("txtgender").value;
+	var gender = document.donor.txtgender.value;
+
+	var phone = document.getElementById("txtPhone");
+	var height = document.getElementById("txtheight");
+	var weight = document.getElementById("txtweight");
+	var valid = true;
+
+	if (name <= 0) 
+	{
+		alert("Don't leave Name field empty!");
+		valid = false;
+
+	}
+	else
+		{
+		if (name.length < 3)
+			{
+			alert("Enter a valid name");
+			valid = false;
+			}
+		}
+	
+	if(age<=0)
+		{
+			alert("Don't leave Age field empty!");
+			valid = false;
+		}
+	
+	else {
+		if(age < 17 || age > 66)
+	
+			{
+				alert("You are not eligible to donate Blood");
+				valid = false;
+			}
+		}
+	
+	if(gender=="Male")
+		{
+		alert(gender);
+		valid = false;
+		//if(height > 145)
+			//{
+			//alert("kk")
+			//valid = false;
+			//}
+		}
+	
+	if(gender=="Female")
+	{
+	alert(gender);
+	valid = false;
+	}
+	
+		/*
+		 * if (mark1.value.length <= 0) {
+		 * document.getElementById("eAuthor").style.visibility = "visible"; //
+		 * alert("Don't leave the field empty!"); valid = false; } if
+		 * (mark2.value.length <= 0) {
+		 * document.getElementById("eTitle").style.visibility = "visible"; //
+		 * alert("Don't leave the field empty!"); valid = false; } if
+		 * (mark3.value.length <= 0) {
+		 * document.getElementById("ePrice").style.visibility = "visible"; //
+		 * alert("Don't leave the field empty!"); valid = false; }
+		 * 
+		 * if (isNaN(id.value)) {
+		 * document.getElementById("eBook_id").style.visibility = "visible"; //
+		 * alert(imark1); valid = false; }
+		 * 
+		 * if (isNaN(imark1) || (imark1 < 0 || imark1 > 100)) {
+		 * document.getElementById("eMark1").style.visibility = "visible"; //
+		 * alert(imark1); valid = false; } if (isNaN(imark2) || (imark2 < 0 ||
+		 * imark2 > 100)) { document.getElementById("eMark2").style.visibility =
+		 * "visible"; // alert(imark1); valid = false; }
+		 * 
+		 * if (isNaN(imark3) || (imark3 < 0 || imark3 > 100)) {
+		 * document.getElementById("eMark3").style.visibility = "visible"; //
+		 * alert(imark1); valid = false; }
+		 */
+
+	return valid;
+}

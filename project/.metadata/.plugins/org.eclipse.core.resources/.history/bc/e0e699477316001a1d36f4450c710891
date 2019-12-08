@@ -1,0 +1,21 @@
+package blood.bl;
+
+import java.util.ArrayList;
+
+import blood.dl.BloodStockDL;
+import blood.dto.BloodStockDTO;
+
+public class BloodStockBL {
+
+	public static ArrayList<BloodStockDTO> countStocks() {
+
+		ArrayList<BloodStockDTO> stocks = null;
+		try {
+			stocks = BloodStockDL.countStocks();
+		} catch (Exception e) {
+			System.out.println("**Error** : BloodStocktBL.countStock " + e.getMessage());
+		}
+		return stocks;
+	}
+
+}

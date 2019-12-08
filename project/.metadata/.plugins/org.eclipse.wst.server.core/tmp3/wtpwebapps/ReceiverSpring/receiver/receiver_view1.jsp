@@ -1,0 +1,127 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	import="java.util.*,blood.dto.*,blood.bl.*" pageEncoding="ISO-8859-1"%>
+<!doctype html>
+<html>
+<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<head>
+<title>Receiver Details</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../Designs/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="../Designs/css/swiper.min.css">
+
+
+</head>
+<h1>Receiver Details</h1>
+<div style="background-image: url('images/logo2.jpg')">
+	<%@ include file="../includes/menu.jsp"%>
+
+	<body>
+	 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
+   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>   
+		<table width="100%" height="688" border="0">
+			<tbody>
+				<tr>
+					<td height="684" align="center" valign="top"><table
+							width="100%" border="0">
+							<tbody>
+								<tr>
+									<td height="530" align="center" valign="top"><table
+											width="100%" border="0">
+											<tbody>
+												<tr>
+													<td height="33" align="center" valign="middle"
+														style="color: #F70509">
+												
+													</td>
+												</tr>
+												<tr>
+													<td height="33" align="center" valign="middle">
+														<form id="form1" name="form1" method="post">
+															
+															<table width="80%" border="1" align="center"
+																class="table table-striped"
+																style="background-color: white">
+																<tbody style="">
+																	<tr style="background-color: red">
+																		<td width="11%" height="33" align="center"
+																			valign="middle" style="color: white"><span
+																			style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif">Patient
+																				ID</span></td>
+																		<td width="16%" align="center" valign="middle"
+																			style="color: white"><span
+																			style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif">Patient
+																				Name </span></td>
+																		<td width="12%" align="center" valign="middle"
+																			style="color: white"><span
+																			style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif">Blood
+																				Group </span></td>
+																		<td width="12%" align="center" valign="middle"
+																			style="color: white"><span
+																			style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif">Gender</span></td>
+																		<td width="11%" align="center" valign="middle"
+																			style="color: white"><span
+																			style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif">Hospital
+																				Name</span></td>
+																		<td width="20%" align="center" valign="middle"
+																			style="color: white"><span
+																			style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif">Hospital
+																				Patient ID</span></td>
+																		<td width="18%" align="center" valign="middle"
+																			style="color: white"><span
+																			style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif">Contact
+																				No:</span></td>
+
+
+																	</tr>
+																<c:forEach var="receiver" items="${list}"> 
+																	<tr>
+																		<td height="30" align="center">${receiver.patient_id}&nbsp;</td>
+																		<td align="center">${receiver.patient_name}&nbsp;</td>
+																		<td align="center">${receiver.blood_grp}&nbsp;</td>
+																		<td align="center" valign="middle"
+																			style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif">&nbsp;${receiver.gender}</td>
+																		<td align="center">${receiver.hos_name}&nbsp;</td>
+																		<td align="center" valign="middle">${receiver.hos_pat_id}&nbsp;</td>
+																		<td align="center">${receiver.phone}&nbsp;</td>
+
+
+
+																	</tr>
+																	 </c:forEach>
+																
+																	
+																	
+																</tbody>
+															</table>
+
+
+														</form>
+													</td>
+												</tr>
+												<tr>
+													<td height="33" align="center" valign="middle">&nbsp;</td>
+												</tr>
+											</tbody>
+										</table></td>
+								</tr>
+
+							</tbody>
+						</table></td>
+				</tr>
+			</tbody>
+		</table>
+</div>
+<%@ include file="../Designs/footer.jsp"%>
+</body>
+</html>

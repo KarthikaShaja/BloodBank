@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="csrf-name" content="csrf5ddd4acb6df66">
+	<meta name="csrf-value" content="6431d1345d56ad6deeb4a558d094f413">
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"02e09611df",applicationID:"156179534"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>	<meta name="cart-hash" content="d751713988987e9331980363e24189ce">
+	<link rel="dns-prefetch" href="https://cdn.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn1.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn2.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn3.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn4.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn5.vectorstock.com">
+
+	<title>Man donates blood Blood donation icons flat style Vector Image</title>
+	<meta name="description" content="Man donates blood Blood donation icons flat style. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions. ID #6209143.">
+	
+	<meta property="og:site_name" content="VectorStock">
+	<meta property="og:type" content="product">
+	<meta property="og:url" content="https://www.vectorstock.com/royalty-free-vector/man-donates-blood-blood-donation-icons-flat-style-vector-6209143">
+	<meta property="og:title" content="Man donates blood Blood donation icons flat style vector image on VectorStock">
+	<meta property="og:description" content="Man donates blood Blood donation icons flat style. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+	<meta property="og:image" content="https://cdn4.vectorstock.com/i/1000x1000/91/43/man-donates-blood-blood-donation-icons-flat-style-vector-6209143.jpg">
+	<meta property="og:image:url" content="https://cdn4.vectorstock.com/i/1000x1000/91/43/man-donates-blood-blood-donation-icons-flat-style-vector-6209143.jpg">
+	<meta property="og:image:secure_url" content="https://cdn4.vectorstock.com/i/1000x1000/91/43/man-donates-blood-blood-donation-icons-flat-style-vector-6209143.jpg">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:width" content="999">
+	<meta property="og:image:height" content="1000">
+	<meta property="og:price:amount" content="0.69">
+	<meta property="og:price:currency" content="USD">
+	<meta property="product:price:amount" content="0.69">
+	<meta property="product:price:currency" content="USD">
+
+	<meta property="fb:app_id" content="241100862642313">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="https://www.vectorstock.com/royalty-free-vector/man-donates-blood-blood-donation-icons-flat-style-vector-6209143">
+	<meta name="twitter:title" content="Man donates blood Blood donation icons flat style vector image">
+	<meta name="twitter:description" content="Man donates blood Blood donation icons flat style">
+	<meta name="twitter:image" content="https://cdn4.vectorstock.com/i/thumb-large/91/43/man-donates-blood-blood-donation-icons-flat-style-vector-6209143.jpg">
+	<meta name="twitter:image:width" content="238">
+	<meta name="twitter:image:height" content="250">
+	<meta name="twitter:site" content="@VectorStock">
+
+	<link rel="canonical" href="https://www.vectorstock.com/royalty-free-vector/man-donates-blood-blood-donation-icons-flat-style-vector-6209143">
+	<link rel="shortcut icon" href="https://cdn.vectorstock.com/img/icons/favicon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" href="//cdn.vectorstock.com/cache/common1573604211.min.css">
+	<link rel="stylesheet" href="//cdn.vectorstock.com/cache/vector1573604211.min.css">
+	<script src="//cdn.vectorstock.com/cache/common1574638507.min.js"></script>
+	<script src="//cdn.vectorstock.com/cache/vector1574638507.min.js"></script>
+<!-- Analytics --><script type="text/javascript">// Load GA script
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+// Setup
+ga('create', 'UA-2180430-2', 'none');
+ga('require', 'linkid', 'linkid.js');
+ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<!-- Top header -->
+<header>
+	<nav class="top">
+		<figure>
+			<a href="/" title="VectorStock&reg;">VectorStock&reg;</a>
+		</figure>
+
+		<div class="grid">
+			<form id="searchbox"
+				 class="empty">
+				<div class="wrap">
+					<fieldset>
+						<div class="contents">
+							<div class="tags">
+								<ul></ul>
+							</div>
+							<div class="input">
+								<input type="text" name="input" autocomplete="off" autocapitalize="none" spellcheck="true" value="" placeholder="Search…" maxlength="50" autofocus>
+								<button type="button" data-action="clear">×</button>
+							</div>
+
+							<input type="hidden" name="category" value="">
+							<input type="hidden" name="custom_srp" value="">
+							<input type="hidden" name="artist" value="">
+							<input type="hidden" name="similar" value="">
+						</div>
+					</fieldset>
+
+					<button type="submit">
+						<span class="icon">Search</span>
+					</button>
+				</div>
+			</form>
+			<ul>
+					<li><a href="/royalty-free-vectors">All Vectors</a></li>
+					<li><a href="/free-vectors">Free Vectors</a></li>
+				</ul>
+		</div>
+
+		<div class="aside">
+			<ul>
+				<li><a href="/popular-categories" title="Popular Categories">Popular
+						Categories</a></li>
+					<li><button type="button" data-action="signup">Sign Up</button></li>
+				</ul>
+		</div>
+
+		<div id="mobilenav-icon">
+			<span></span><span></span><span></span><span></span>
+		</div>
+	</nav>
+
+	<!-- Submenu -->
+		<nav id="searchrelated"></nav>	
+
+		<!-- Mobile menu -->
+	<div id="mobilenav-menu">
+		<div>
+			<div class="group">
+				<h4>Browse</h4>
+				<ul>
+					<li><a href="/royalty-free-vectors">All Vectors</a></li>
+					<li><a href="/free-vectors">Free Vectors</a></li>
+				</ul>
+			</div>
+			<div class="group">
+				<h4>Account</h4>
+				<ul>
+					<li class="account">
+							<ul>
+								<li><a href="/signup">Sign Up</a></li>
+								<li data-action="login"><a href="/?login=1">Login…</a></li>
+							</ul>
+						</li>
+				</ul>
+				<form method="get" action="/auth/logout" class="logout">
+					<input type="hidden" name="logout" value="1">
+				</form>
+			</div>
+			<div class="group">
+				<h4>Help</h4>
+				<ul>
+					<li><a href="/faq"><abbr title="Frequently Asked Questions">FAQs</abbr></a></li>
+					<li><a href="/contact">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+		<!-- Account Menu Tabs -->
+		<aside id="nav_sidebar" class="tabs tabsDark">
+
+			<nav>
+				<ul role="tablist">
+					<li data-tab-id="signup" class=""><span role="tab"><span>Sign Up</span></span></li>
+					<li data-tab-id="login" class="selected"><span role="tab"><span>Log In</span></span></li>
+				</ul>
+			</nav>
+
+			<section id="sb_signup" data-tab-id="signup" class="">
+				<div class="primary">
+					<p>New to VectorStock?</p>
+					<p><em>We're the largest royalty-free, vector-only stock agency in the world.</em></p>
+					<p>Every week we add new premium graphics by the thousands.</p>
+				</div>
+				<div class="secondary">
+					<p>Whether you're a global ad&nbsp;agency or a freelance graphic designer, we have the vector graphics to make your project come to life.</p>
+					<p>Buy Vectors, sell Vectors or both. <a href="/signup">Sign up now, it’s free.</a></p>
+				</div>
+				<div class="footer">
+					<button class="master">
+						<span class="title">Sign Up...</span>
+						<span class="value">
+							<span class="symbol signup"></span>
+						</span>
+					</button>
+				</div>
+			</section>
+
+			<section id="sb_login" data-tab-id="login" class="selected">
+				<form action="/auth/login" method="post">
+
+
+					<fieldset class="">
+						<label for="vs_username">Email / Username</label>
+						<div class="textfield">
+							<input type="text" id="vs_username" name="vs_username" value="" autocomplete="on" tabindex="1">
+						</div>
+					</fieldset>
+					<fieldset class="">
+						<label for="vs_password">Password</label>
+						<button type="button" class="forgot">Forgot Password</button>
+						<div class="textfield">
+							<input type="password" id="vs_password" name="vs_password" value="" autocomplete="on" tabindex="2"  maxlength="20">
+						</div>
+					</fieldset>
+					<fieldset>
+						<div class="checkbox checked">
+							<label class="selected" for="vs_remember">
+								<span class="title">Stay Logged In</span>
+								<span class="icon"></span>
+								<input type="checkbox" id="vs_remember" name="vs_remember" value="yes" tabindex="3" checked>
+							</label>
+						</div>
+					</fieldset>
+
+
+					<button type="submit" tabindex="4">Log In</button>
+				</form>
+				<div class="alternatives">
+					<h6>Or Login With</h6>
+					<ul>
+						<li class="gp"><a href="/">
+							<span class="title">Google</span>
+							<span class="icon"></span>
+						</a></li>
+						<li class="fb"><a href="/">
+							<span class="title">Facebook</span>
+							<span class="icon"></span>
+						</a></li>
+					</ul>
+				</div>
+
+				
+			</section>
+		</aside>
+
+	<!-- Page -->
+	<article>
+		<section id="vs-asset">
+
+			<!-- Aside -->
+			<div class="aside">
+				<ol itemscope itemtype="http://schema.org/BreadcrumbList">
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemtype="http://schema.org/Thing" itemprop="item" href="/royalty-free-vectors">
+							<span itemprop="name">Royalty Free Vectors</span>
+						</a>
+						<meta itemprop="position" content="1" />
+					</li>
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemtype="http://schema.org/Thing" itemprop="item" href="/royalty-free-vectors/blood-cell-man-vectors">
+							<span itemprop="name">Blood Cell Man Vectors</span>
+						</a>
+						<meta itemprop="position" content="2" />
+					</li>
+				</ol>
+
+				<h1>
+					Man donates blood Blood donation icons flat style vector&nbsp;image														</h1>
+
+				<figure style="padding-top: 99.098135426889%;" class="target">
+					<div class="highres" data-src="https://cdn4.vectorstock.com/i/1000x1000/91/43/man-donates-blood-blood-donation-icons-flat-style-vector-6209143.jpg">
+						<noscript><img src="https://cdn4.vectorstock.com/i/1000x1000/91/43/man-donates-blood-blood-donation-icons-flat-style-vector-6209143.jpg" title="Man donates blood Blood donation icons flat style vector image" alt="Man donates blood Blood donation icons flat style"></noscript>
+					</div>
+					<div class="lowres">
+						<img src="https://cdn4.vectorstock.com/i/thumbs/91/43/man-donates-blood-blood-donation-icons-flat-style-vector-6209143.jpg" title="Man donates blood Blood donation icons flat style vector image" alt="Man donates blood Blood donation icons flat style">
+					</div>
+					<div class="overlay"></div>
+				</figure>
+
+				<form data-loggedin="0" data-licenses="2" data-license="standard" data-status="" data-payments="3" data-payment="single-image">
+					<input type="hidden" id="vector_id" value="6209143">
+					<input type="hidden" id="vector_title" value="Man donates blood Blood donation icons flat style">
+					<input type="hidden" id="vector_description" value="Man donates blood Blood donation icons flat style. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+					<input type="hidden" id="vector_url" value="https://www.vectorstock.com/royalty-free-vector/man-donates-blood-blood-donation-icons-flat-style-vector-6209143">
+					<input type="hidden" id="vector_media" value="https://cdn4.vectorstock.com/i/1000x1000/91/43/man-donates-blood-blood-donation-icons-flat-style-vector-6209143.jpg">
+					<input type="hidden" id="vector_ratio" value="1.0009813542689">
+					<input type="hidden" id="vector_license_status" value="">
+					<input type="hidden" id="artist_name" value="RoyAmer">
+					<input type="hidden" id="account_user" value="0">
+
+					<div class="options">
+						<!--
+						-- OPTION: License type
+						-->
+						<div class="option" data-type="license" data-license="standard" data-licenses="2">
+							<h6><span class="type">License</span><a href="/faq/members/standard-license">Learn More</a></h6>
+							<div class="optgroup radgroup">
+								<fieldset>
+									<label for="f_license_standard" class="checked">
+										<input type="radio" id="f_license_standard" name="license" value="standard" checked="checked" tabindex="2">
+										<span class="label">Standard</span>
+										<span class="descr">For Print, Advertising, Design</span>
+									</label>
+								</fieldset>
+								<fieldset>
+									<label for="f_license_expanded">
+										<input type="radio" id="f_license_expanded" name="license" value="expanded" tabindex="4">
+										<span class="label">Expanded</span>
+										<span class="descr">For Resale &amp; Reproduction</span>
+									</label>
+								</fieldset>
+							</div>
+
+							<div class="help">
+								<p>The license type determines how you can use this image.</p>
+								<table>
+									<thead>
+										<tr>
+											<th></th>
+																						<th data-license="standard">Std.</th>																						<th data-license="expanded">Exp.</th>										</tr>
+									</thead>
+									<tbody>
+																				<tr>
+											<td>Print / Editorial</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Graphic Design</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Web Design</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Social Media</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Edit &amp; Modify</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Multi-user</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Resale Items</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Unlimited Runs</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<!--
+						-- OPTION: Payment options (Standard)
+						-->
+						<div class="option" data-type="payment" data-license="standard">
+							<h6><span class="type">Ways to Buy</span><a href="/faq/members/ways-to-buy">Compare</a></h6>
+							<div class="optgroup radgroup" data-license="standard">
+																<fieldset>
+									<label for="f_payment_standard_single-image" class="checked" >
+										<input type="radio" id="f_payment_standard_single-image" name="payment_standard" data-cost="14.99" value="single-image"  checked="checked" tabindex="5">
+										<span class="label">Single Image</span>
+										<span class="value"><small>$</small><var>14.99</var></span>
+									</label>
+								</fieldset>
+																<fieldset>
+									<label for="f_payment_standard_credits">
+										<input type="radio" id="f_payment_standard_credits" name="payment_standard" data-cost="1" value="credits" tabindex="6">
+										<span class="label">Credits</span>
+										<span class="value"><small>$</small><var>1.00</var></span>
+									</label>
+								</fieldset>
+								<fieldset>
+									<label for="f_payment_standard_subscription">
+										<input type="radio" id="f_payment_standard_subscription" name="payment_standard" data-cost="1" value="subscription" tabindex="7">
+										<span class="label">Subscription</span>
+										<span class="value"><small>$</small><var>0.69</var></span>
+									</label>
+								</fieldset>
+							</div>
+							<div class="help">
+								<p>There are three ways to pay for Standard licenses. Prices are $<abbr title="United States Dollars">US</abbr>.</p>
+
+								<table>
+									<thead>
+										<tr>
+											<th>Pay with</th>
+											<th>Image Price</th>
+										</tr>
+									</thead>
+									<tbody>
+																				<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Single Image</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>14.99</span>
+												</span>
+												<span class="byline">One-time payment</span>
+											</td>
+										</tr>
+																				<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Pay-As-You-Go Credits</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>1</span>
+												</span>
+												<span class="byline">Download images on-demand (1 credit = $1). Minimum purchase of 30.</span>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Subscription Plan</span>
+													<span class="dm"></span>
+													<span class="dd"><em>From</em> 69c</span>
+												</span>
+												<span class="byline">Choose a monthly plan. Unused downloads automatically roll into following month.</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!--
+						-- OPTION: Payment options (Expanded)
+						-->
+						<div class="option" data-type="payment" data-license="expanded">
+							<h6><span class="type">Ways to Buy</span><a href="/faq/members/ways-to-buy">Compare</a></h6>
+							<div class="optgroup radgroup" data-license="expanded">
+																<fieldset>
+									<label for="f_payment_expanded_single-image" class="checked">
+										<input type="radio" id="f_payment_expanded_single-image" name="payment_expanded" data-cost="29.99" value="single-image" checked="checked" tabindex="8">
+										<span class="label">Single Image</span>
+										<span class="value"><small>$</small><var>29.99</var></span>
+									</label>
+								</fieldset>
+																<fieldset>
+									<label for="f_payment_expanded_credits">
+										<input type="radio" id="f_payment_expanded_credits" name="payment_expanded" data-cost="30" value="credits" tabindex="9">
+										<span class="label">Credits</span>
+										<span class="value"><small>$</small><var>30.00</var></span>
+									</label>
+								</fieldset>
+							</div>
+														<div class="help">
+								<p>There are two ways to pay for Expanded licenses. Prices are $<abbr title="United States Dollars">US</abbr>.</p>
+
+								<table>
+									<thead>
+										<tr>
+											<th>Pay with</th>
+											<th>Cost per Image</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Single Image</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>29.99</span>
+												</span>
+												<span class="byline">One-off payment, no signup needed.</span>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Credits</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>30</span>
+												</span>
+												<span class="byline">Download images on-demand (1 credit = $1).</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+													</div>
+					</div>
+					<div class="download">
+						<button type="button" data-action="download">
+							<span class="label">Download Image</span>
+							<span class="icon"></span>
+						</button>
+						<h6><span class="label">Files Included</span></h6>
+						<div class="help">
+							<span class="loading"><span class="label">Loading Details...</span></span>
+						</div>
+					</div>
+					<div class="download_options">
+						<div class="wrap">
+							<div class="optgroup" data-action="download">
+								<span class="header">Download File/s:</span>
+								<div class="dropdown" data-value="zip">
+									<div class="display">
+										<span class="label"><strong>ZIP Archive</strong></span>
+										<span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M10.6,12.8 15,17.2 19.4,12.8"/></svg></span>
+									</div>
+									<div class="select">
+										<select>
+											<optgroup label="All Files">
+												<option value="zip" data-label="ZIP Archive" data-details="" data-url="" selected="selected">ZIP Archive</option>											</optgroup>
+											<optgroup label="Image">
+												<option value="jpg" data-label="High-res JPG" data-details="300 DPI+" data-url="">High-res JPG (300 DPI+)</option>												<option value="png" data-label="High-res PNG" data-details="300 DPI+" data-url="">High-res PNG (300 DPI+)</option>											</optgroup>
+											<optgroup label="Vector">
+												<option value="ai" data-label="Adobe Illustrator" data-details="v10+" data-url="">Adobe Illustrator (v10+)</option>												<option value="eps" data-label="Vector EPS" data-details="v8+" data-url="">Vector EPS (v8+)</option>												<option value="pdf" data-label="Vector PDF" data-details="" data-url="">Vector PDF</option>											</optgroup>
+										</select>
+									</div>
+								</div>
+								<button type="button" data-action="download_file">
+									<span class="label">Download ZIP</span>
+									<span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M23.6,21.2 23.6,9.5 16.4,9.5 16.4,21.3 10.8,21.3 11,21.5 20,30.5 29.2,21.3"/></svg></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<!-- Image -->
+			<div class="image">
+				<figure data-orientation="portrait" style="padding-top: 99.098135426889%;" class="target">
+					<div class="highres" data-src="https://cdn4.vectorstock.com/i/1000x1000/91/43/man-donates-blood-blood-donation-icons-flat-style-vector-6209143.jpg">
+						<noscript><img src="https://cdn4.vectorstock.com/i/1000x1000/91/43/man-donates-blood-blood-donation-icons-flat-style-vector-6209143.jpg" title="Man donates blood Blood donation icons flat style vector image" alt="Man donates blood Blood donation icons flat style"></noscript>
+					</div>
+					<div class="lowres">
+						<img src="https://cdn4.vectorstock.com/i/thumbs/91/43/man-donates-blood-blood-donation-icons-flat-style-vector-6209143.jpg" title="Man donates blood Blood donation icons flat style vector image" alt="Man donates blood Blood donation icons flat style">
+					</div>
+					<div class="overlay"></div>
+					<div class="panels">
+						<div class="share">
+							<h4>Share on</h4>
+							<ul>
+								<li class="pinterest"><button type="button" data-action="pinterest"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M12.5,0C5.6,0,0,5.6,0,12.5c0,5.12,3.08,9.52,7.48,11.45c-0.03-0.87-0.01-1.92,0.22-2.87c0.24-1.01,1.61-6.81,1.61-6.81s-0.4-0.8-0.4-1.98c0-1.85,1.07-3.24,2.41-3.24c1.14,0,1.69,0.85,1.69,1.88c0,1.14-0.73,2.85-1.1,4.44c-0.31,1.33,0.67,2.41,1.97,2.41c2.37,0,3.96-3.04,3.96-6.65c0-2.74-1.85-4.79-5.2-4.79c-3.79,0-6.15,2.83-6.15,5.99c0,1.09,0.32,1.86,0.82,2.45c0.23,0.27,0.26,0.38,0.18,0.7c-0.06,0.23-0.2,0.78-0.25,1c-0.08,0.32-0.34,0.43-0.63,0.31c-1.75-0.71-2.56-2.62-2.56-4.77c0-3.55,3-7.81,8.93-7.81c4.77,0,7.91,3.45,7.91,7.16c0,4.9-2.73,8.57-6.75,8.57c-1.35,0-2.62-0.73-3.05-1.56c0,0-0.73,2.88-0.88,3.44c-0.27,0.96-0.78,1.93-1.26,2.68C10.08,24.82,11.27,25,12.5,25C19.4,25,25,19.4,25,12.5S19.4,0,12.5,0L12.5,0z"/></svg></span><span class="label">Pinterest</span></span></button></li>
+								<li class="facebook"><button type="button" data-action="facebook"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M22.44,1H2.56C1.7,1,1,1.7,1,2.56v19.88C1,23.3,1.7,24,2.56,24h10.41v-8.89H9.98v-3.46h2.99V9.1c0-2.96,1.81-4.58,4.45-4.58c1.27,0,2.35,0.09,2.67,0.14v3.1l-1.83,0c-1.44,0-1.72,0.68-1.72,1.69v2.21h3.43l-0.45,3.46h-2.98V24h5.89C23.3,24,24,23.3,24,22.44V2.56C24,1.7,23.3,1,22.44,1z"/></svg></span><span class="label">Facebook</span></span></button></li>
+								<li class="twitter"><button type="button" data-action="twitter"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M7.86,22.5c9.43,0,14.59-7.69,14.59-14.37c0-0.22,0-0.44-0.01-0.65c1-0.71,1.87-1.6,2.56-2.61c-0.92,0.4-1.91,0.67-2.95,0.79c1.06-0.62,1.87-1.61,2.26-2.79c-0.99,0.58-2.09,1-3.26,1.23c-0.94-0.98-2.27-1.6-3.74-1.6c-2.83,0-5.13,2.26-5.13,5.05c0,0.4,0.05,0.78,0.13,1.15C8.05,8.49,4.27,6.48,1.74,3.42C1.3,4.17,1.05,5.04,1.05,5.96c0,1.75,0.91,3.3,2.28,4.2C2.49,10.14,1.7,9.91,1,9.53C1,9.55,1,9.58,1,9.6c0,2.45,1.77,4.49,4.11,4.95c-0.43,0.12-0.88,0.18-1.35,0.18c-0.33,0-0.65-0.03-0.96-0.09c0.65,2.01,2.55,3.47,4.79,3.51C5.84,19.5,3.63,20.3,1.22,20.3c-0.41,0-0.82-0.02-1.22-0.07C2.27,21.66,4.97,22.5,7.86,22.5"/></svg></span><span class="label">Twitter</span></span></button></li>
+							</ul>
+						</div>
+						<div class="composite">
+							<button type="button" data-action="download"><span><span class="label">Download JPG Preview Image</span></span></button>
+						</div>
+					</div>
+				</figure>
+				<div class="details">
+					<div class="meta">
+						<ul>
+							<li class="meta-id">
+								<dl><dt>Image ID</dt><dd>6209143</dd></dl>
+							</li>
+							<li class="meta-artist">
+								<dl>
+									<dt>Artist</dt>
+									<dd><a href="/royalty-free-vectors/vectors-by_RoyAmer" rel="nofollow">RoyAmer</a><button type="button" data-action="follow" title="Follow Artists that you like to create a newsfeed of their recent images."><span class="label">Follow</span></button></dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+					<div class="options" data-total="2">
+						<ul>
+							<li class="opt-like">
+								<button type="button" data-action="like" data-count="0"><span class="icon">&hearts;</span><span class="label">Like</span><span class="tally"></span></button>
+							</li>
+							<li class="opt-cart">
+								<button type="button" data-action="cart"><span class="icon">+</span><span class="label">Cart</span></button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- Metadata -->
+			<div class="metadata">
+				<div itemtype="http://schema.org/Product" itemscope>
+					<meta itemprop="sku" content="6209143">
+					<meta itemprop="productID" content="6209143">
+					<meta itemprop="name" content="Man donates blood Blood donation icons flat style">
+					<meta itemprop="description" content="Man donates blood Blood donation icons flat style. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+					<meta itemprop="releaseDate" content="2015-10-14">
+					<link itemprop="image" href="https://cdn4.vectorstock.com/i/1000x1000/91/43/man-donates-blood-blood-donation-icons-flat-style-vector-6209143.jpg">
+					
+					<div itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
+						<meta itemprop="name" content="VectorStock">
+					</div>
+					<div itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
+						<link itemprop="url" href="https://www.vectorstock.com/royalty-free-vector/man-donates-blood-blood-donation-icons-flat-style-vector-6209143">
+						<meta itemprop="availability" content="https://schema.org/InStock">
+						<div itemprop="price">0.69</div>
+						<div itemprop="priceCurrency">USD</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section id="vs-related">
+			<div id="group-similar" class="group">
+				<h6><span class="icon"></span><strong>Similar Images</strong></h6>
+
+				<div class="gallery large">
+					<ul>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/46/60/blood-donation-colorful-flat-design-style-vector-23924660.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-donation-colorful-flat-design-style-vector-23924660" title="blood donation - colorful flat design style vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/46/60/blood-donation-colorful-flat-design-style-vector-23924660.jpg" title="blood donation - colorful flat design style" alt="blood donation - colorful flat design style vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/56/65/set-of-blood-donor-images-with-blood-donation-vector-20735665.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-blood-donor-images-with-blood-donation-vector-20735665" title="set of blood donor images with blood donation vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/56/65/set-of-blood-donor-images-with-blood-donation-vector-20735665.jpg" title="set of blood donor images with blood donation" alt="set of blood donor images with blood donation vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/66/24/blood-donation-website-landing-page-volunteers-vector-25206624.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-donation-website-landing-page-volunteers-vector-25206624" title="blood donation website landing page volunteers vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/66/24/blood-donation-website-landing-page-volunteers-vector-25206624.jpg" title="blood donation website landing page volunteers" alt="blood donation website landing page volunteers vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/15/38/set-charity-and-donate-icon-set-vector-25641538.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-charity-and-donate-icon-set-vector-25641538" title="set charity and donate icon set vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/15/38/set-charity-and-donate-icon-set-vector-25641538.jpg" title="set charity and donate icon set" alt="set charity and donate icon set vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/87/65/blood-transfusion-concept-donation-vector-22768765.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-transfusion-concept-donation-vector-22768765" title="blood transfusion concept donation vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/87/65/blood-transfusion-concept-donation-vector-22768765.jpg" title="blood transfusion concept donation" alt="blood transfusion concept donation vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/76/82/volunteer-in-medical-hospital-donating-blood-vector-26837682.jpg"><a href="//www.vectorstock.com/royalty-free-vector/volunteer-in-medical-hospital-donating-blood-vector-26837682" title="volunteer in medical hospital donating blood vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/76/82/volunteer-in-medical-hospital-donating-blood-vector-26837682.jpg" title="volunteer in medical hospital donating blood" alt="volunteer in medical hospital donating blood vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/73/98/bood-donation-flat-isometric-concept-vector-19347398.jpg"><a href="//www.vectorstock.com/royalty-free-vector/bood-donation-flat-isometric-concept-vector-19347398" title="bood donation flat isometric concept vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/73/98/bood-donation-flat-isometric-concept-vector-19347398.jpg" title="bood donation flat isometric concept" alt="bood donation flat isometric concept vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/23/49/blood-donation-flat-style-vector-16742349.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-donation-flat-style-vector-16742349" title="blood donation flat style vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/23/49/blood-donation-flat-style-vector-16742349.jpg" title="blood donation flat style" alt="blood donation flat style vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/25/68/donation-and-volunteer-work-icons-vector-15292568.jpg"><a href="//www.vectorstock.com/royalty-free-vector/donation-and-volunteer-work-icons-vector-15292568" title="donation and volunteer work icons vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/25/68/donation-and-volunteer-work-icons-vector-15292568.jpg" title="donation and volunteer work icons" alt="donation and volunteer work icons vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/55/12/blood-donation-icon-in-different-style-vector-6305512.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-donation-icon-in-different-style-vector-6305512" title="Blood donation icon in different style vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/55/12/blood-donation-icon-in-different-style-vector-6305512.jpg" title="Blood donation icon in different style" alt="Blood donation icon in different style vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/98/34/blood-donation-thin-line-icons-set-vector-15909834.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-donation-thin-line-icons-set-vector-15909834" title="blood donation thin line icons set vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/98/34/blood-donation-thin-line-icons-set-vector-15909834.jpg" title="blood donation thin line icons set" alt="blood donation thin line icons set vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/03/70/man-donating-blood-icon-vector-13610370.jpg"><a href="//www.vectorstock.com/royalty-free-vector/man-donating-blood-icon-vector-13610370" title="man donating blood icon vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/03/70/man-donating-blood-icon-vector-13610370.jpg" title="man donating blood icon" alt="man donating blood icon vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/78/64/blood-bag-and-hand-of-donor-with-heart-vector-13557864.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-bag-and-hand-of-donor-with-heart-vector-13557864" title="blood bag and hand of donor with heart vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/78/64/blood-bag-and-hand-of-donor-with-heart-vector-13557864.jpg" title="blood bag and hand of donor with heart" alt="blood bag and hand of donor with heart vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/29/29/donor-flat-concept-vector-3862929.jpg"><a href="//www.vectorstock.com/royalty-free-vector/donor-flat-concept-vector-3862929" title="Donor Flat Concept vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/29/29/donor-flat-concept-vector-3862929.jpg" title="Donor Flat Concept" alt="Donor Flat Concept vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/20/70/iv-stand-and-isometric-people-vector-18132070.jpg"><a href="//www.vectorstock.com/royalty-free-vector/iv-stand-and-isometric-people-vector-18132070" title="iv stand and isometric people vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/20/70/iv-stand-and-isometric-people-vector-18132070.jpg" title="iv stand and isometric people" alt="iv stand and isometric people vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/73/97/blood-donation-concept-drop-of-blood-hold-in-hand-vector-14987397.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-donation-concept-drop-of-blood-hold-in-hand-vector-14987397" title="blood donation concept drop of blood hold in hand vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/73/97/blood-donation-concept-drop-of-blood-hold-in-hand-vector-14987397.jpg" title="blood donation concept drop of blood hold in hand" alt="blood donation concept drop of blood hold in hand vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/09/19/donor-day-motivational-poster-vector-21080919.jpg"><a href="//www.vectorstock.com/royalty-free-vector/donor-day-motivational-poster-vector-21080919" title="donor day motivational poster vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/09/19/donor-day-motivational-poster-vector-21080919.jpg" title="donor day motivational poster" alt="donor day motivational poster vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/67/36/charity-concept-donator-holding-heart-in-hands-vector-24176736.jpg"><a href="//www.vectorstock.com/royalty-free-vector/charity-concept-donator-holding-heart-in-hands-vector-24176736" title="charity concept donator holding heart in hands vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/67/36/charity-concept-donator-holding-heart-in-hands-vector-24176736.jpg" title="charity concept donator holding heart in hands" alt="charity concept donator holding heart in hands vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/04/75/heart-in-hands-icon-vector-13940475.jpg"><a href="//www.vectorstock.com/royalty-free-vector/heart-in-hands-icon-vector-13940475" title="heart in hands icon vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/04/75/heart-in-hands-icon-vector-13940475.jpg" title="heart in hands icon" alt="heart in hands icon vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/26/07/blood-donation-bag-in-shape-of-a-human-heart-vector-22372607.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-donation-bag-in-shape-of-a-human-heart-vector-22372607" title="blood donation bag in shape of a human heart vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/26/07/blood-donation-bag-in-shape-of-a-human-heart-vector-22372607.jpg" title="blood donation bag in shape of a human heart" alt="blood donation bag in shape of a human heart vector image"></noscript></a></li>
+					</ul>
+				</div>
+				<div class="gallery small more">
+					<ul>
+						<li data-id="26564485" data-title="collection cute funny men and women sitting in" data-src="https://cdn1.vectorstock.com/i/thumbs/44/85/collection-cute-funny-men-and-women-sitting-in-vector-26564485.jpg"><a href="//www.vectorstock.com/royalty-free-vector/collection-cute-funny-men-and-women-sitting-in-vector-26564485" title="collection cute funny men and women sitting in vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/44/85/collection-cute-funny-men-and-women-sitting-in-vector-26564485.jpg" title="collection cute funny men and women sitting in" alt="collection cute funny men and women sitting in vector image"></noscript></a></li>
+						<li data-id="23851610" data-title="charity and donation" data-src="https://cdn1.vectorstock.com/i/thumbs/16/10/charity-and-donation-vector-23851610.jpg"><a href="//www.vectorstock.com/royalty-free-vector/charity-and-donation-vector-23851610" title="charity and donation vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/16/10/charity-and-donation-vector-23851610.jpg" title="charity and donation" alt="charity and donation vector image"></noscript></a></li>
+						<li data-id="23865307" data-title="volunteers needed flat style design" data-src="https://cdn3.vectorstock.com/i/thumbs/53/07/volunteers-needed-flat-style-design-vector-23865307.jpg"><a href="//www.vectorstock.com/royalty-free-vector/volunteers-needed-flat-style-design-vector-23865307" title="volunteers needed flat style design vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/53/07/volunteers-needed-flat-style-design-vector-23865307.jpg" title="volunteers needed flat style design" alt="volunteers needed flat style design vector image"></noscript></a></li>
+						<li data-id="3529910" data-title="trendy medical symbol with long shadow" data-src="https://cdn1.vectorstock.com/i/thumbs/99/10/trendy-medical-symbol-with-long-shadow-vector-3529910.jpg"><a href="//www.vectorstock.com/royalty-free-vector/trendy-medical-symbol-with-long-shadow-vector-3529910" title="trendy medical symbol with long shadow vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/99/10/trendy-medical-symbol-with-long-shadow-vector-3529910.jpg" title="trendy medical symbol with long shadow" alt="trendy medical symbol with long shadow vector image"></noscript></a></li>
+						<li data-id="22849809" data-title="charity flat icons" data-src="https://cdn5.vectorstock.com/i/thumbs/98/09/charity-flat-icons-vector-22849809.jpg"><a href="//www.vectorstock.com/royalty-free-vector/charity-flat-icons-vector-22849809" title="charity flat icons vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/98/09/charity-flat-icons-vector-22849809.jpg" title="charity flat icons" alt="charity flat icons vector image"></noscript></a></li>
+						<li data-id="21742507" data-title="two hands donate blood world blood donor day" data-src="https://cdn3.vectorstock.com/i/thumbs/25/07/two-hands-donate-blood-world-blood-donor-day-vector-21742507.jpg"><a href="//www.vectorstock.com/royalty-free-vector/two-hands-donate-blood-world-blood-donor-day-vector-21742507" title="two hands donate blood world blood donor day vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/25/07/two-hands-donate-blood-world-blood-donor-day-vector-21742507.jpg" title="two hands donate blood world blood donor day" alt="two hands donate blood world blood donor day vector image"></noscript></a></li>
+						<li data-id="25240673" data-title="cell division circle icon" data-src="https://cdn4.vectorstock.com/i/thumbs/06/73/cell-division-circle-icon-vector-25240673.jpg"><a href="//www.vectorstock.com/royalty-free-vector/cell-division-circle-icon-vector-25240673" title="cell division circle icon vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/06/73/cell-division-circle-icon-vector-25240673.jpg" title="cell division circle icon" alt="cell division circle icon vector image"></noscript></a></li>
+						<li data-id="23748486" data-title="blood donation cartoon graphic" data-src="https://cdn2.vectorstock.com/i/thumbs/84/86/blood-donation-cartoon-graphic-vector-23748486.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-donation-cartoon-graphic-vector-23748486" title="blood donation cartoon graphic vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/84/86/blood-donation-cartoon-graphic-vector-23748486.jpg" title="blood donation cartoon graphic" alt="blood donation cartoon graphic vector image"></noscript></a></li>
+						<li data-id="20722050" data-title="blood donation icon set in thin line style" data-src="https://cdn1.vectorstock.com/i/thumbs/20/50/blood-donation-icon-set-in-thin-line-style-vector-20722050.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-donation-icon-set-in-thin-line-style-vector-20722050" title="blood donation icon set in thin line style vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/20/50/blood-donation-icon-set-in-thin-line-style-vector-20722050.jpg" title="blood donation icon set in thin line style" alt="blood donation icon set in thin line style vector image"></noscript></a></li>
+						<li data-id="4450945" data-title="Flat style blood donation icon" data-src="https://cdn1.vectorstock.com/i/thumbs/09/45/flat-style-blood-donation-icon-vector-4450945.jpg"><a href="//www.vectorstock.com/royalty-free-vector/flat-style-blood-donation-icon-vector-4450945" title="Flat style blood donation icon vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/09/45/flat-style-blood-donation-icon-vector-4450945.jpg" title="Flat style blood donation icon" alt="Flat style blood donation icon vector image"></noscript></a></li>
+						<li data-id="14890057" data-title="blood collection concept blood donation set of" data-src="https://cdn3.vectorstock.com/i/thumbs/00/57/blood-collection-concept-blood-donation-set-of-vector-14890057.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-collection-concept-blood-donation-set-of-vector-14890057" title="blood collection concept blood donation set of vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/00/57/blood-collection-concept-blood-donation-set-of-vector-14890057.jpg" title="blood collection concept blood donation set of" alt="blood collection concept blood donation set of vector image"></noscript></a></li>
+						<li data-id="13448975" data-title="doping and sport concept flat style" data-src="https://cdn1.vectorstock.com/i/thumbs/89/75/doping-and-sport-concept-flat-style-vector-13448975.jpg"><a href="//www.vectorstock.com/royalty-free-vector/doping-and-sport-concept-flat-style-vector-13448975" title="doping and sport concept flat style vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/89/75/doping-and-sport-concept-flat-style-vector-13448975.jpg" title="doping and sport concept flat style" alt="doping and sport concept flat style vector image"></noscript></a></li>
+						<li data-id="27280634" data-title="blood test colorful concept" data-src="https://cdn5.vectorstock.com/i/thumbs/06/34/blood-test-colorful-concept-vector-27280634.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-test-colorful-concept-vector-27280634" title="blood test colorful concept vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/06/34/blood-test-colorful-concept-vector-27280634.jpg" title="blood test colorful concept" alt="blood test colorful concept vector image"></noscript></a></li>
+						<li data-id="7901384" data-title="Blood transfusion flat" data-src="https://cdn5.vectorstock.com/i/thumbs/13/84/blood-transfusion-flat-vector-7901384.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-transfusion-flat-vector-7901384" title="Blood transfusion flat vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/13/84/blood-transfusion-flat-vector-7901384.jpg" title="Blood transfusion flat" alt="Blood transfusion flat vector image"></noscript></a></li>
+						<li data-id="23501025" data-title="blood donation or donor day banners" data-src="https://cdn1.vectorstock.com/i/thumbs/10/25/blood-donation-or-donor-day-banners-vector-23501025.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-donation-or-donor-day-banners-vector-23501025" title="blood donation or donor day banners vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/10/25/blood-donation-or-donor-day-banners-vector-23501025.jpg" title="blood donation or donor day banners" alt="blood donation or donor day banners vector image"></noscript></a></li>
+						<li data-id="18446965" data-title="donation circle template" data-src="https://cdn1.vectorstock.com/i/thumbs/69/65/donation-circle-template-vector-18446965.jpg"><a href="//www.vectorstock.com/royalty-free-vector/donation-circle-template-vector-18446965" title="donation circle template vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/69/65/donation-circle-template-vector-18446965.jpg" title="donation circle template" alt="donation circle template vector image"></noscript></a></li>
+						<li data-id="6207070" data-title="Halloween Attributes Characters Set in Flat Style" data-src="https://cdn1.vectorstock.com/i/thumbs/70/70/halloween-attributes-characters-set-in-flat-style-vector-6207070.jpg"><a href="//www.vectorstock.com/royalty-free-vector/halloween-attributes-characters-set-in-flat-style-vector-6207070" title="Halloween Attributes Characters Set in Flat Style vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/70/70/halloween-attributes-characters-set-in-flat-style-vector-6207070.jpg" title="Halloween Attributes Characters Set in Flat Style" alt="Halloween Attributes Characters Set in Flat Style vector image"></noscript></a></li>
+						<li data-id="27538162" data-title="doctor appointment cartoon blood donation in" data-src="https://cdn3.vectorstock.com/i/thumbs/81/62/doctor-appointment-cartoon-blood-donation-in-vector-27538162.jpg"><a href="//www.vectorstock.com/royalty-free-vector/doctor-appointment-cartoon-blood-donation-in-vector-27538162" title="doctor appointment cartoon blood donation in vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/81/62/doctor-appointment-cartoon-blood-donation-in-vector-27538162.jpg" title="doctor appointment cartoon blood donation in" alt="doctor appointment cartoon blood donation in vector image"></noscript></a></li>
+						<li data-id="23949606" data-title="blood icon red flat drop symbol" data-src="https://cdn2.vectorstock.com/i/thumbs/96/06/blood-icon-red-flat-drop-symbol-vector-23949606.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-icon-red-flat-drop-symbol-vector-23949606" title="blood icon red flat drop symbol vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/96/06/blood-icon-red-flat-drop-symbol-vector-23949606.jpg" title="blood icon red flat drop symbol" alt="blood icon red flat drop symbol vector image"></noscript></a></li>
+						<li data-id="5668945" data-title="charity and donation icons flat line design" data-src="https://cdn1.vectorstock.com/i/thumbs/89/45/charity-and-donation-icons-flat-line-design-vector-5668945.jpg"><a href="//www.vectorstock.com/royalty-free-vector/charity-and-donation-icons-flat-line-design-vector-5668945" title="charity and donation icons flat line design vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/89/45/charity-and-donation-icons-flat-line-design-vector-5668945.jpg" title="charity and donation icons flat line design" alt="charity and donation icons flat line design vector image"></noscript></a></li>
+						<li data-id="21677713" data-title="flat line colorful medical icons collection" data-src="https://cdn4.vectorstock.com/i/thumbs/77/13/flat-line-colorful-medical-icons-collection-vector-21677713.jpg"><a href="//www.vectorstock.com/royalty-free-vector/flat-line-colorful-medical-icons-collection-vector-21677713" title="flat line colorful medical icons collection vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/77/13/flat-line-colorful-medical-icons-collection-vector-21677713.jpg" title="flat line colorful medical icons collection" alt="flat line colorful medical icons collection vector image"></noscript></a></li>
+						<li data-id="21501569" data-title="heart and drop blood logo concept donor foundation" data-src="https://cdn5.vectorstock.com/i/thumbs/15/69/heart-and-drop-blood-logo-concept-donor-foundation-vector-21501569.jpg"><a href="//www.vectorstock.com/royalty-free-vector/heart-and-drop-blood-logo-concept-donor-foundation-vector-21501569" title="heart and drop blood logo concept donor foundation vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/15/69/heart-and-drop-blood-logo-concept-donor-foundation-vector-21501569.jpg" title="heart and drop blood logo concept donor foundation" alt="heart and drop blood logo concept donor foundation vector image"></noscript></a></li>
+						<li data-id="20187065" data-title="concept for charity medical donations internet" data-src="https://cdn1.vectorstock.com/i/thumbs/70/65/concept-for-charity-medical-donations-internet-vector-20187065.jpg"><a href="//www.vectorstock.com/royalty-free-vector/concept-for-charity-medical-donations-internet-vector-20187065" title="concept for charity medical donations internet vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/70/65/concept-for-charity-medical-donations-internet-vector-20187065.jpg" title="concept for charity medical donations internet" alt="concept for charity medical donations internet vector image"></noscript></a></li>
+						<li data-id="17847711" data-title="donor concept flat blood drop isolated" data-src="https://cdn2.vectorstock.com/i/thumbs/77/11/donor-concept-flat-blood-drop-isolated-vector-17847711.jpg"><a href="//www.vectorstock.com/royalty-free-vector/donor-concept-flat-blood-drop-isolated-vector-17847711" title="donor concept flat blood drop isolated vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/77/11/donor-concept-flat-blood-drop-isolated-vector-17847711.jpg" title="donor concept flat blood drop isolated" alt="donor concept flat blood drop isolated vector image"></noscript></a></li>
+						<li data-id="26748709" data-title="fundraising and blood donation volunteers work" data-src="https://cdn5.vectorstock.com/i/thumbs/87/09/fundraising-and-blood-donation-volunteers-work-vector-26748709.jpg"><a href="//www.vectorstock.com/royalty-free-vector/fundraising-and-blood-donation-volunteers-work-vector-26748709" title="fundraising and blood donation volunteers work vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/87/09/fundraising-and-blood-donation-volunteers-work-vector-26748709.jpg" title="fundraising and blood donation volunteers work" alt="fundraising and blood donation volunteers work vector image"></noscript></a></li>
+						<li data-id="21190209" data-title="people logos medical and pharmaceutical logo" data-src="https://cdn5.vectorstock.com/i/thumbs/02/09/people-logos-medical-and-pharmaceutical-logo-vector-21190209.jpg"><a href="//www.vectorstock.com/royalty-free-vector/people-logos-medical-and-pharmaceutical-logo-vector-21190209" title="people logos medical and pharmaceutical logo vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/02/09/people-logos-medical-and-pharmaceutical-logo-vector-21190209.jpg" title="people logos medical and pharmaceutical logo" alt="people logos medical and pharmaceutical logo vector image"></noscript></a></li>
+						<li data-id="21158962" data-title="human veins and arteries" data-src="https://cdn3.vectorstock.com/i/thumbs/89/62/human-veins-and-arteries-vector-21158962.jpg"><a href="//www.vectorstock.com/royalty-free-vector/human-veins-and-arteries-vector-21158962" title="human veins and arteries vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/89/62/human-veins-and-arteries-vector-21158962.jpg" title="human veins and arteries" alt="human veins and arteries vector image"></noscript></a></li>
+						<li data-id="23975934" data-title="guy and colored blood transfusion" data-src="https://cdn5.vectorstock.com/i/thumbs/59/34/guy-and-colored-blood-transfusion-vector-23975934.jpg"><a href="//www.vectorstock.com/royalty-free-vector/guy-and-colored-blood-transfusion-vector-23975934" title="guy and colored blood transfusion vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/59/34/guy-and-colored-blood-transfusion-vector-23975934.jpg" title="guy and colored blood transfusion" alt="guy and colored blood transfusion vector image"></noscript></a></li>
+						<li data-id="13616436" data-title="success business woman standing over her enemy" data-src="https://cdn2.vectorstock.com/i/thumbs/64/36/success-business-woman-standing-over-her-enemy-vector-13616436.jpg"><a href="//www.vectorstock.com/royalty-free-vector/success-business-woman-standing-over-her-enemy-vector-13616436" title="success business woman standing over her enemy vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/64/36/success-business-woman-standing-over-her-enemy-vector-13616436.jpg" title="success business woman standing over her enemy" alt="success business woman standing over her enemy vector image"></noscript></a></li>
+						<li data-id="6388188" data-title="Blood donation infographics" data-src="https://cdn4.vectorstock.com/i/thumbs/81/88/blood-donation-infographics-vector-6388188.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-donation-infographics-vector-6388188" title="Blood donation infographics vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/81/88/blood-donation-infographics-vector-6388188.jpg" title="Blood donation infographics" alt="Blood donation infographics vector image"></noscript></a></li>
+						<li class="more"><div><a href="/royalty-free-vectors/blood-cell-man-vectors"><span class="lrg">More Blood Cell Man Images…</span><span class="sml">More</span></a></div></li>
+					</ul>
+				</div>
+			</div>
+			<div id="group-artist" class="group">
+				<h6><span class="icon"></span><strong>More by <a href="/royalty-free-vectors/vectors-by_RoyAmer" rel="nofollow">RoyAmer</a></strong></h6>
+
+				<div class="gallery large">
+					<ul>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/86/61/blood-drop-creative-donate-blood-vector-6208661.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-drop-creative-donate-blood-vector-6208661" title="Blood drop creative Donate blood vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/86/61/blood-drop-creative-donate-blood-vector-6208661.jpg" title="Blood drop creative Donate blood" alt="Blood drop creative Donate blood vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/63/59/blood-donation-vector-4116359.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blood-donation-vector-4116359" title="blood donation vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/63/59/blood-donation-vector-4116359.jpg" title="blood donation" alt="blood donation vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/76/38/flat-medical-icons-concept-set-of-medical-supplies-vector-23747638.jpg"><a href="//www.vectorstock.com/royalty-free-vector/flat-medical-icons-concept-set-of-medical-supplies-vector-23747638" title="flat medical icons concept set of medical supplies vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/76/38/flat-medical-icons-concept-set-of-medical-supplies-vector-23747638.jpg" title="flat medical icons concept set of medical supplies" alt="flat medical icons concept set of medical supplies vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/17/31/flat-health-care-and-medical-research-background-vector-6111731.jpg"><a href="//www.vectorstock.com/royalty-free-vector/flat-health-care-and-medical-research-background-vector-6111731" title="Flat health care and medical research background vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/17/31/flat-health-care-and-medical-research-background-vector-6111731.jpg" title="Flat health care and medical research background" alt="Flat health care and medical research background vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/91/85/flat-style-modern-infographic-business-solution-vector-6209185.jpg"><a href="//www.vectorstock.com/royalty-free-vector/flat-style-modern-infographic-business-solution-vector-6209185" title="Flat style modern infographic business solution vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/91/85/flat-style-modern-infographic-business-solution-vector-6209185.jpg" title="Flat style modern infographic business solution" alt="Flat style modern infographic business solution vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/14/01/flat-style-modern-idea-innovation-light-bulb-vector-5721401.jpg"><a href="//www.vectorstock.com/royalty-free-vector/flat-style-modern-idea-innovation-light-bulb-vector-5721401" title="Flat style modern idea innovation light bulb vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/14/01/flat-style-modern-idea-innovation-light-bulb-vector-5721401.jpg" title="Flat style modern idea innovation light bulb" alt="Flat style modern idea innovation light bulb vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/94/05/flat-style-modern-idea-innovation-light-bulb-vector-6209405.jpg"><a href="//www.vectorstock.com/royalty-free-vector/flat-style-modern-idea-innovation-light-bulb-vector-6209405" title="Flat style modern idea innovation light bulb vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/94/05/flat-style-modern-idea-innovation-light-bulb-vector-6209405.jpg" title="Flat style modern idea innovation light bulb" alt="Flat style modern idea innovation light bulb vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/91/33/flat-style-modern-idea-innovation-light-bulb-vector-6209133.jpg"><a href="//www.vectorstock.com/royalty-free-vector/flat-style-modern-idea-innovation-light-bulb-vector-6209133" title="Flat style modern idea innovation light bulb vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/91/33/flat-style-modern-idea-innovation-light-bulb-vector-6209133.jpg" title="Flat style modern idea innovation light bulb" alt="Flat style modern idea innovation light bulb vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/35/29/business-meeting-brainstorming-in-flat-style-vector-10883529.jpg"><a href="//www.vectorstock.com/royalty-free-vector/business-meeting-brainstorming-in-flat-style-vector-10883529" title="Business meeting brainstorming in flat style vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/35/29/business-meeting-brainstorming-in-flat-style-vector-10883529.jpg" title="Business meeting brainstorming in flat style" alt="Business meeting brainstorming in flat style vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/64/00/chatbot-concept-man-chatting-with-chat-bot-vector-22506400.jpg"><a href="//www.vectorstock.com/royalty-free-vector/chatbot-concept-man-chatting-with-chat-bot-vector-22506400" title="chatbot concept man chatting with chat bot vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/64/00/chatbot-concept-man-chatting-with-chat-bot-vector-22506400.jpg" title="chatbot concept man chatting with chat bot" alt="chatbot concept man chatting with chat bot vector image"></noscript></a></li>
+					</ul>
+				</div>
+				<div class="gallery small more">
+					<ul>
+						<li data-id="6208969" data-title="Family flat style people figures parenting parents" data-src="https://cdn5.vectorstock.com/i/thumbs/89/69/family-flat-style-people-figures-parenting-parents-vector-6208969.jpg"><a href="//www.vectorstock.com/royalty-free-vector/family-flat-style-people-figures-parenting-parents-vector-6208969" title="Family flat style people figures parenting parents vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/89/69/family-flat-style-people-figures-parenting-parents-vector-6208969.jpg" title="Family flat style people figures parenting parents" alt="Family flat style people figures parenting parents vector image vector image"></noscript></a></li>
+						<li data-id="6111673" data-title="Business man meeting conference and brainstorming" data-src="https://cdn4.vectorstock.com/i/thumbs/16/73/business-man-meeting-conference-and-brainstorming-vector-6111673.jpg"><a href="//www.vectorstock.com/royalty-free-vector/business-man-meeting-conference-and-brainstorming-vector-6111673" title="Business man meeting conference and brainstorming vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/16/73/business-man-meeting-conference-and-brainstorming-vector-6111673.jpg" title="Business man meeting conference and brainstorming" alt="Business man meeting conference and brainstorming vector image vector image"></noscript></a></li>
+						<li data-id="6112171" data-title="Business meeting brainstorming in flat style" data-src="https://cdn2.vectorstock.com/i/thumbs/21/71/business-meeting-brainstorming-in-flat-style-vector-6112171.jpg"><a href="//www.vectorstock.com/royalty-free-vector/business-meeting-brainstorming-in-flat-style-vector-6112171" title="Business meeting brainstorming in flat style vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/21/71/business-meeting-brainstorming-in-flat-style-vector-6112171.jpg" title="Business meeting brainstorming in flat style" alt="Business meeting brainstorming in flat style vector image vector image"></noscript></a></li>
+						<li data-id="22506461" data-title="smiling standing bearded hipster man holding vape" data-src="https://cdn2.vectorstock.com/i/thumbs/64/61/smiling-standing-bearded-hipster-man-holding-vape-vector-22506461.jpg"><a href="//www.vectorstock.com/royalty-free-vector/smiling-standing-bearded-hipster-man-holding-vape-vector-22506461" title="smiling standing bearded hipster man holding vape vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/64/61/smiling-standing-bearded-hipster-man-holding-vape-vector-22506461.jpg" title="smiling standing bearded hipster man holding vape" alt="smiling standing bearded hipster man holding vape vector image vector image"></noscript></a></li>
+						<li data-id="4115435" data-title="drop" data-src="https://cdn1.vectorstock.com/i/thumbs/54/35/drop-vector-4115435.jpg"><a href="//www.vectorstock.com/royalty-free-vector/drop-vector-4115435" title="drop vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/54/35/drop-vector-4115435.jpg" title="drop" alt="drop vector image vector image"></noscript></a></li>
+						<li data-id="4116008" data-title="DR icons" data-src="https://cdn4.vectorstock.com/i/thumbs/60/08/dr-icons-vector-4116008.jpg"><a href="//www.vectorstock.com/royalty-free-vector/dr-icons-vector-4116008" title="DR icons vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/60/08/dr-icons-vector-4116008.jpg" title="DR icons" alt="DR icons vector image vector image"></noscript></a></li>
+						<li data-id="6112009" data-title="Synchronic translation services and international" data-src="https://cdn5.vectorstock.com/i/thumbs/20/09/synchronic-translation-services-and-international-vector-6112009.jpg"><a href="//www.vectorstock.com/royalty-free-vector/synchronic-translation-services-and-international-vector-6112009" title="Synchronic translation services and international vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/20/09/synchronic-translation-services-and-international-vector-6112009.jpg" title="Synchronic translation services and international" alt="Synchronic translation services and international vector image vector image"></noscript></a></li>
+						<li data-id="6111635" data-title="piggy bank concept in flat style - money savings" data-src="https://cdn1.vectorstock.com/i/thumbs/16/35/piggy-bank-concept-in-flat-style-money-savings-vector-6111635.jpg"><a href="//www.vectorstock.com/royalty-free-vector/piggy-bank-concept-in-flat-style-money-savings-vector-6111635" title="piggy bank concept in flat style - money savings vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/16/35/piggy-bank-concept-in-flat-style-money-savings-vector-6111635.jpg" title="piggy bank concept in flat style - money savings" alt="piggy bank concept in flat style - money savings vector image vector image"></noscript></a></li>
+						<li data-id="6209799" data-title="piggy bank concept in flat style - money savings" data-src="https://cdn5.vectorstock.com/i/thumbs/97/99/piggy-bank-concept-in-flat-style-money-savings-vector-6209799.jpg"><a href="//www.vectorstock.com/royalty-free-vector/piggy-bank-concept-in-flat-style-money-savings-vector-6209799" title="piggy bank concept in flat style - money savings vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/97/99/piggy-bank-concept-in-flat-style-money-savings-vector-6209799.jpg" title="piggy bank concept in flat style - money savings" alt="piggy bank concept in flat style - money savings vector image vector image"></noscript></a></li>
+						<li data-id="5721437" data-title="Doctor with medical icons in a circle" data-src="https://cdn3.vectorstock.com/i/thumbs/14/37/doctor-with-medical-icons-in-a-circle-vector-5721437.jpg"><a href="//www.vectorstock.com/royalty-free-vector/doctor-with-medical-icons-in-a-circle-vector-5721437" title="Doctor with medical icons in a circle vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/14/37/doctor-with-medical-icons-in-a-circle-vector-5721437.jpg" title="Doctor with medical icons in a circle" alt="Doctor with medical icons in a circle vector image vector image"></noscript></a></li>
+						<li data-id="24739763" data-title="man taking money bags to bank savings concept" data-src="https://cdn4.vectorstock.com/i/thumbs/97/63/man-taking-money-bags-to-bank-savings-concept-vector-24739763.jpg"><a href="//www.vectorstock.com/royalty-free-vector/man-taking-money-bags-to-bank-savings-concept-vector-24739763" title="man taking money bags to bank savings concept vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/97/63/man-taking-money-bags-to-bank-savings-concept-vector-24739763.jpg" title="man taking money bags to bank savings concept" alt="man taking money bags to bank savings concept vector image vector image"></noscript></a></li>
+						<li data-id="23747629" data-title="group of business men working people on white" data-src="https://cdn5.vectorstock.com/i/thumbs/76/29/group-of-business-men-working-people-on-white-vector-23747629.jpg"><a href="//www.vectorstock.com/royalty-free-vector/group-of-business-men-working-people-on-white-vector-23747629" title="group of business men working people on white vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/76/29/group-of-business-men-working-people-on-white-vector-23747629.jpg" title="group of business men working people on white" alt="group of business men working people on white vector image vector image"></noscript></a></li>
+						<li data-id="5721409" data-title="SEO concept in flat style" data-src="https://cdn5.vectorstock.com/i/thumbs/14/09/seo-concept-in-flat-style-vector-5721409.jpg"><a href="//www.vectorstock.com/royalty-free-vector/seo-concept-in-flat-style-vector-5721409" title="SEO concept in flat style vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/14/09/seo-concept-in-flat-style-vector-5721409.jpg" title="SEO concept in flat style" alt="SEO concept in flat style vector image vector image"></noscript></a></li>
+						<li data-id="22506523" data-title="turn off the water with man s hand isolated on" data-src="https://cdn4.vectorstock.com/i/thumbs/65/23/turn-off-the-water-with-man-s-hand-isolated-on-vector-22506523.jpg"><a href="//www.vectorstock.com/royalty-free-vector/turn-off-the-water-with-man-s-hand-isolated-on-vector-22506523" title="turn off the water with man s hand isolated on vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/65/23/turn-off-the-water-with-man-s-hand-isolated-on-vector-22506523.jpg" title="turn off the water with man s hand isolated on" alt="turn off the water with man s hand isolated on vector image vector image"></noscript></a></li>
+						<li data-id="6209537" data-title="coffee house logo concept in mono line style" data-src="https://cdn3.vectorstock.com/i/thumbs/95/37/coffee-house-logo-concept-in-mono-line-style-vector-6209537.jpg"><a href="//www.vectorstock.com/royalty-free-vector/coffee-house-logo-concept-in-mono-line-style-vector-6209537" title="coffee house logo concept in mono line style vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/95/37/coffee-house-logo-concept-in-mono-line-style-vector-6209537.jpg" title="coffee house logo concept in mono line style" alt="coffee house logo concept in mono line style vector image vector image"></noscript></a></li>
+						<li data-id="6208907" data-title="Health care and Medical flat banners set with" data-src="https://cdn3.vectorstock.com/i/thumbs/89/07/health-care-and-medical-flat-banners-set-with-vector-6208907.jpg"><a href="//www.vectorstock.com/royalty-free-vector/health-care-and-medical-flat-banners-set-with-vector-6208907" title="Health care and Medical flat banners set with vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/89/07/health-care-and-medical-flat-banners-set-with-vector-6208907.jpg" title="Health care and Medical flat banners set with" alt="Health care and Medical flat banners set with vector image vector image"></noscript></a></li>
+						<li data-id="22506446" data-title="hands with smartphone smartwatch and bank card" data-src="https://cdn2.vectorstock.com/i/thumbs/64/46/hands-with-smartphone-smartwatch-and-bank-card-vector-22506446.jpg"><a href="//www.vectorstock.com/royalty-free-vector/hands-with-smartphone-smartwatch-and-bank-card-vector-22506446" title="hands with smartphone smartwatch and bank card vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/64/46/hands-with-smartphone-smartwatch-and-bank-card-vector-22506446.jpg" title="hands with smartphone smartwatch and bank card" alt="hands with smartphone smartwatch and bank card vector image vector image"></noscript></a></li>
+						<li data-id="22506504" data-title="turn off the water with man s hand isolated on" data-src="https://cdn5.vectorstock.com/i/thumbs/65/04/turn-off-the-water-with-man-s-hand-isolated-on-vector-22506504.jpg"><a href="//www.vectorstock.com/royalty-free-vector/turn-off-the-water-with-man-s-hand-isolated-on-vector-22506504" title="turn off the water with man s hand isolated on vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/65/04/turn-off-the-water-with-man-s-hand-isolated-on-vector-22506504.jpg" title="turn off the water with man s hand isolated on" alt="turn off the water with man s hand isolated on vector image vector image"></noscript></a></li>
+						<li data-id="6208855" data-title="Set of flat design style concept icons for graphic" data-src="https://cdn1.vectorstock.com/i/thumbs/88/55/set-of-flat-design-style-concept-icons-for-graphic-vector-6208855.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-flat-design-style-concept-icons-for-graphic-vector-6208855" title="Set of flat design style concept icons for graphic vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/88/55/set-of-flat-design-style-concept-icons-for-graphic-vector-6208855.jpg" title="Set of flat design style concept icons for graphic" alt="Set of flat design style concept icons for graphic vector image vector image"></noscript></a></li>
+						<li data-id="6111703" data-title="Doctor nurse concept flat icons set hospital" data-src="https://cdn4.vectorstock.com/i/thumbs/17/03/doctor-nurse-concept-flat-icons-set-hospital-vector-6111703.jpg"><a href="//www.vectorstock.com/royalty-free-vector/doctor-nurse-concept-flat-icons-set-hospital-vector-6111703" title="Doctor nurse concept flat icons set hospital vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/17/03/doctor-nurse-concept-flat-icons-set-hospital-vector-6111703.jpg" title="Doctor nurse concept flat icons set hospital" alt="Doctor nurse concept flat icons set hospital vector image vector image"></noscript></a></li>
+						<li class="more"><div><a href="/royalty-free-vectors/vectors-by_RoyAmer" rel="nofollow"><span class="lrg">More Images…</span><span class="sml">More</span></a></div></li>
+					</ul>
+				</div>
+			</div>
+			<div id="group-keywords" class="group">
+				<h6><span class="icon"></span><strong>Related Searches</strong></h6>
+				<ul>
+					<li><a href="/royalty-free-vectors/blood-vectors">Blood</a></li>
+					<li><a href="/royalty-free-vectors/cell-vectors">Cell</a></li>
+					<li><a href="/royalty-free-vectors/man-vectors">Man</a></li>
+					<li><a href="/royalty-free-vectors/style-vectors">Style</a></li>
+					<li><a href="/royalty-free-vectors/flat-vectors">Flat</a></li>
+					<li><a href="/royalty-free-vectors/donation-vectors">Donation</a></li>
+					<li><a href="/royalty-free-vectors/donate-vectors">Donate</a></li>
+					<li><a href="/royalty-free-vectors/concept-vectors">Concept</a></li>
+					<li><a href="/royalty-free-vectors/artery-vectors">Artery</a></li>
+					<li><a href="/royalty-free-vectors/charity-vectors">Charity</a></li>
+					<li><a href="/royalty-free-vectors/community-vectors">Community</a></li>
+					<li><a href="/royalty-free-vectors/clinic-vectors">Clinic</a></li>
+					<li><a href="/royalty-free-vectors/assistance-vectors">Assistance</a></li>
+					<li><a href="/royalty-free-vectors/cardiology-vectors">Cardiology</a></li>
+					<li><a href="/royalty-free-vectors/banking-vectors">Banking</a></li>
+					<li><a href="/royalty-free-vectors/corporate-vectors">Corporate</a></li>
+					<li><a href="/royalty-free-vectors/collection-vectors">Collection</a></li>
+					<li><a href="/royalty-free-vectors/aid-vectors">Aid</a></li>
+					<li><a href="/royalty-free-vectors/care-vectors">Care</a></li>
+					<li><a href="/royalty-free-vectors/design-vectors">Design</a></li>
+					<li><a href="/royalty-free-vectors/emblem-vectors">Emblem</a></li>
+					<li><a href="/royalty-free-vectors/friendship-vectors">Friendship</a></li>
+					<li><a href="/royalty-free-vectors/health-vectors">Health</a></li>
+					<li><a href="/royalty-free-vectors/element-vectors">Element</a></li>
+					<li><a href="/royalty-free-vectors/hand-vectors">Hand</a></li>
+					<li><a href="/royalty-free-vectors/drop-vectors">Drop</a></li>
+					<li><a href="/royalty-free-vectors/group-vectors">Group</a></li>
+					<li><a href="/royalty-free-vectors/decorative-vectors">Decorative</a></li>
+					<li><a href="/royalty-free-vectors/donor-vectors">Donor</a></li>
+					<li><a href="/royalty-free-vectors/health care-vectors">Health Care</a></li>
+				</ul>
+			</div>
+		</section>
+	</article>
+
+	<!-- Footer -->
+	<footer>
+
+		<div>
+		<div class="column c1">
+			<nav class="company">
+				<h4>VectorStock</h4>
+				<ul>
+					<li><a href="/" title="Home">Home</a></li>
+					<li class="sel"><a href="/free-vectors" title="Free Vectors">Free Vectors</a></li>
+					<li class="sel"><a href="/royalty-free-vectors" title="All Royalty-Free Vectors">All Vectors</a></li>
+				</ul>
+				<ul>
+					<li><a href="/what-is-a-vector" title="What is a Vector?">What is a Vector?</a></li>
+				</ul>
+				<ul>
+					<li class="sel"><a href="/faq" title="Frequently Asked Questions"><span class="long">Frequently Asked Questions</span><span class="short">FAQs</span></a></li>
+					<li><a href="/faq/members/terms-of-use" title="Terms &amp; Conditions">Terms &amp; Conditions</a></li>
+					<li class="sel"><a href="/contact" title="Contact Us">Contact Us</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="column c2">
+			<nav class="account">
+					<h4><span class="title">Account</span><span class="icon"></span></h4>
+					<ul>
+						<li><a href="/signup" title="Join Now">Join Now</a></li>
+						<li><a href="/account/sell-vectors" title="Become a VectorStock Contributor">Contributor Sign Up</a></li>
+						<li><a href="/faq/artists/why-sell-at-vectorstock" title="Contributor FAQ">Contributor FAQ</a></li>
+					</ul>
+			</nav>
+		</div>
+		<div class="column c3">
+			<nav class="social">
+				<h4>Social</h4>
+				<ul>
+					<li class="facebook sel"><a href="http://www.facebook.com/VectorStock" target="_blank"><span class="title">Facebook</span><span class="icon"></span></a></li>
+					<li class="pinterest sel"><a href="http://pinterest.com/vectorstock/" target="_blank"><span class="title">Pinterest</span><span class="icon"></span></a></li>
+					<li class="twitter sel"><a href="https://twitter.com/VectorStock" target="_blank"><span class="title">Twitter</span><span class="icon"></span></a></li>
+				</ul>
+			</nav>
+			<div class="signoff">
+				<h5><a href="https://www.vectorstock.com/" title="VectorStock®">VectorStock®</a></h5>
+				<p>VectorStock and the VectorStock logo are registered trademarks of VectorStock Media.<br>
+				© 2019. <span>All Rights Reserved.</span></p>
+			</div>
+		</div>
+	</div></footer>
+
+
+	<script src="//www.googleadservices.com/pagead/conversion_async.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"02e09611df","applicationID":"156179534","transactionName":"ZV0ENRYCC0RYAkVbDVwXJRQXFwpaFhNeSwNeTB9MAhEAUhQXVFEWXUpJFw0GEg==","queueTime":0,"applicationTime":41,"atts":"SRoHQ14YGEo=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+</body>
+</html>

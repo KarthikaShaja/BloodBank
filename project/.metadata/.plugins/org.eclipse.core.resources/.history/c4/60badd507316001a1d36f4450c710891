@@ -1,0 +1,49 @@
+package blood.bl;
+
+import java.util.ArrayList;
+
+import blood.dl.BloodStockDL;
+import blood.dto.BloodStockDTO;
+
+public class BloodStockBL {
+	
+
+	
+	public static int getCount(String blood_grp)
+	{
+		int result = 0;
+       
+
+		try
+		{
+			result = BloodStockDL.getCount(blood_grp);
+			
+		}
+		catch(Exception e)
+		 {
+			 System.out.println("**Error** : BloodStocktBL.get "+e.getMessage());
+		 }
+		return result;
+	
+	}
+	
+	public static int getCountt(String blood_grp)
+	{
+		int result = 0;
+       
+
+		try
+		{
+			result = BloodStockDL.getCount(blood_grp);
+			
+		}
+		catch(Exception e)
+		 {
+			 System.out.println("**Error** : BloodStocktBL.get "+e.getMessage());
+		 }
+		return result;
+	
+	}
+
+	
+}
